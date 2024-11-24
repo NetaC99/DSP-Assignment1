@@ -58,7 +58,7 @@ public class pdfManager {
                 }
 
                 // Determine file name and path
-                String filePath = inputDirectory + "/downloaded.pdf";
+                String filePath = inputDirectory + "\\" + System.currentTimeMillis();
                 try (InputStream inputStream = httpConnection.getInputStream();
                      FileOutputStream fileOutputStream = new FileOutputStream(filePath)) {
 
@@ -80,7 +80,7 @@ public class pdfManager {
     }
 
     private String getOutputFilePath(String baseName, String extension, String outputDirectory) {
-        return outputDirectory + "/" + baseName + "-first-page." + extension;
+        return outputDirectory + "\\" + baseName + "-first-page." + extension;
     }
     
     private void convertToImage(String pdfPath, String outputDirectory) {
